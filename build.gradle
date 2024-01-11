@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+}
+
+group 'jingtechy.saucedemo.automation'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    cucumberVersion = '7.3.3'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+def tags = (findProperty('tags') == null) ? 'not @Ignore' : findProperty('tags')
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'html:reports/test-output/Report.html',
+                    '--plugin','junit:reports/test-output/Report.xml',
+                    '--plugin', 'pretty',
+                    '--glue', 'saucedemo/stepdefinitions', 'src/test/java/saucedemo/features/',
+                    '--tags', "${tags}"
+            ]
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
