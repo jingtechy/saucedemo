@@ -9,18 +9,16 @@ import saucedemo.utilities.UtilityBase;
 
 public class LoginStepDefs extends UtilityBase {
 
-    private LoginPage loginPage;
+    private final LoginPage loginPage = new LoginPage(driver);
 
     @Given("I go to website {string}")
-    public void i_go_to_website(String url) {
+    public void iGoToWebsite(String url) {
         navigateLogin(url);
         System.out.println("Navigating to: " + url);
     }
 
     @And("I enter {string} and {string}")
     public void iEnterAnd(String username, String password) {
-        loginPage = new LoginPage(driver);
-
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
     }
