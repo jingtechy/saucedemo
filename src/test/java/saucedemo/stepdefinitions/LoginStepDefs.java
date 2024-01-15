@@ -4,18 +4,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import saucedemo.pages.LoginPage;
-import saucedemo.utilities.BrowserDriver;
 import saucedemo.utilities.UtilityBase;
 
 public class LoginStepDefs extends UtilityBase {
-
-    private final LoginPage loginPage = new LoginPage(driver);
+  
+    private final LoginPage loginPage = new LoginPage(Hooks.getDriver());
 
     @Given("I go to website {string}")
     public void iGoToWebsite(String url) {
-        navigateLogin(url);
-        System.out.println("Navigating to: " + url);
-    }
+        Hooks.getDriver().navigate().to(url);
+        System.out.println("I go to website: " + url);
 
     @And("I enter {string} and {string}")
     public void iEnterAnd(String username, String password) {
@@ -26,5 +24,6 @@ public class LoginStepDefs extends UtilityBase {
     @Then("I click Login button")
     public void iClickButton() {
         loginPage.clickLoginButton();
+        System.out.println("I login website successfully.");
     }
 }

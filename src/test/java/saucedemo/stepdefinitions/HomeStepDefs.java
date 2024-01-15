@@ -6,7 +6,6 @@ import io.cucumber.java.en.Then;
 import saucedemo.pages.HomePage;
 import saucedemo.utilities.UtilityBase;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +13,7 @@ import static junit.framework.TestCase.assertTrue;
 
 public class HomeStepDefs extends UtilityBase {
 
-    private final HomePage homePage = new HomePage(driver);
+    private final HomePage homePage = new HomePage(Hooks.getDriver());
 
     @Then("I verify home page title is {string}")
     public void iVerifyHomePageTitleIs(String string) throws InterruptedException {
