@@ -1,7 +1,6 @@
 @home
 Feature: Home Page Feature
 
-
   Scenario Outline: Home page validations
     Given I go to website "https://www.saucedemo.com/"
     And I enter "<username>" and "<password>"
