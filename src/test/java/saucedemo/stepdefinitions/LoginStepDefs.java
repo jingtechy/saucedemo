@@ -7,13 +7,13 @@ import saucedemo.pages.LoginPage;
 import saucedemo.utilities.UtilityBase;
 
 public class LoginStepDefs extends UtilityBase {
-  
     private final LoginPage loginPage = new LoginPage(Hooks.getDriver());
 
     @Given("I go to website {string}")
     public void iGoToWebsite(String url) {
         Hooks.getDriver().navigate().to(url);
         System.out.println("I go to website: " + url);
+    }
 
     @And("I enter {string} and {string}")
     public void iEnterAnd(String username, String password) {
@@ -22,7 +22,7 @@ public class LoginStepDefs extends UtilityBase {
     }
 
     @Then("I click Login button")
-    public void iClickButton() {
+    public void iClickLoginButton() {
         loginPage.clickLoginButton();
         System.out.println("I login website successfully.");
     }
