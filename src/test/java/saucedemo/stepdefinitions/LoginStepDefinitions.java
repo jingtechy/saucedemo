@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import saucedemo.pages.LoginPage;
 import saucedemo.utilities.UtilityBase;
 
-public class LoginStepDefs extends UtilityBase {
+public class LoginStepDefinitions extends UtilityBase {
     private final LoginPage loginPage = new LoginPage(Hooks.getDriver());
 
     @Given("I go to website {string}")

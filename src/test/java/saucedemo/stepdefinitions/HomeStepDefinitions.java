@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class HomeStepDefs extends UtilityBase {
+public class HomeStepDefinitions extends UtilityBase {
 
     private final HomePage homePage = new HomePage(Hooks.getDriver());
 
