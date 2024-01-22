@@ -8,8 +8,8 @@ This repository contains UI automation scripts to test web functionalities using
 
 1. [Prerequisites](#prerequisites)
 2. [Setup](#setup)
-3. [Project Structure](#project-structure)
-4. [Running Test](#running-test)
+3. [Running Test](#running-test)
+4. [Project Structure](#project-structure)
 
 
 ## Prerequisites
@@ -24,6 +24,12 @@ This repository contains UI automation scripts to test web functionalities using
 1. Clone the repository to your local machine:
    ```bash
    git clone https://github.com/jingtechy/saucedemo
+
+## Running Test
+1. Running login page tests
+`./gradlew build cucumber -P tags=@login`
+2. Running home page tests
+`./gradlew build cucumber -P tags=@home`
 
 ## Project Structure
 
@@ -62,4 +68,7 @@ This repository contains UI automation scripts to test web functionalities using
 ├── .gitignore
 ├── build.gradle
 ├── README.md
+
+
+
 
