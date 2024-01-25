@@ -55,4 +55,9 @@ public class HomeStepDefinitions extends UtilityBase {
             homePage.isHomeSideMenuDisplayed(menu.get("Menus"));
         }
     }
+
+    @Then("I click {string} menu on home page")
+    public void iClickMenuOnHomePage(String menu) {
+        homePage.clickMenu(menu);
+    }
 }
