@@ -22,8 +22,9 @@ public class LoginStepDefinitions extends UtilityBase {
     }
 
     @Then("I click Login button")
-    public void iClickLoginButton() {
+    public void iClickLoginButton() throws InterruptedException {
         loginPage.clickLoginButton();
         System.out.println("I login website successfully.");
+        Thread.sleep(2000);
     }
 }

@@ -49,6 +49,10 @@ public class HomePage {
         homeSideMenus = driver.findElement(By.xpath("//a[@class='bm-item menu-item' and text()='" + menu + "']"));
         return homeSideMenus.isDisplayed();
     }
+
+    public void clickMenu(String menu) {
+        driver.findElement(By.xpath("//a[@class='bm-item menu-item' and text()='" + menu + "']")).click();
+    }
 }
 
 
