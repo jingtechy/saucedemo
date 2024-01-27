@@ -38,6 +38,7 @@ Feature: Home Page Feature
     Then I click Login button
     Then I click "Open Menu" button on home page
     Then I click "Logout" menu on home page
+    Then I verify "Swag Labs" display on login page
     Examples:
       | username      | password     |
       | standard_user | secret_sauce |
