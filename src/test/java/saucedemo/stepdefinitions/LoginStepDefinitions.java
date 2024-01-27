@@ -15,7 +15,12 @@ public class LoginStepDefinitions extends UtilityBase {
         System.out.println("I go to website: " + url);
     }
 
-    @And("I enter {string} and {string}")
+    @And("I verify {string} display on login page")
+    public void iVerifyDisplayOnLoginPage(String text) {
+        loginPage.isTextDisplayed(text);
+    }
+
+    @Then("I enter {string} and {string}")
     public void iEnterAnd(String username, String password) {
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
