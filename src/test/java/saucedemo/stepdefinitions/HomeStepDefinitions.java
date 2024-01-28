@@ -44,8 +44,9 @@ public class HomeStepDefinitions extends UtilityBase {
     }
 
     @Then("I click {string} button on home page")
-    public void iClickButtonOnHomePage(String button) {
+    public void iClickButtonOnHomePage(String button) throws InterruptedException {
         homePage.clickButton(button);
+        Thread.sleep(1000);
     }
 
     @Then("I verify the following menus are displayed")

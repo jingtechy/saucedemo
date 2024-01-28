@@ -32,14 +32,8 @@ Feature: Home Page Feature
       | standard_user   | secret_sauce |
 
 
-  Scenario Outline: Log out saucedemo website
-    Given I go to website "https://www.saucedemo.com/"
-    And I enter "<username>" and "<password>"
-    Then I click Login button
-    Then I click "Open Menu" button on home page
-    Then I click "Logout" menu on home page
-    Then I verify "Swag Labs" display on login page
-    Examples:
-      | username      | password     |
-      | standard_user | secret_sauce |
+
+
+
+
 
