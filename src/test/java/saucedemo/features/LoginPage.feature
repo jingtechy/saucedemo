@@ -11,6 +11,7 @@
       | username        | password     |
       | standard_user   | secret_sauce |
 
+
     @logout
     Scenario Outline: Log out saucedemo website
       Given I go to website "https://www.saucedemo.com/"
