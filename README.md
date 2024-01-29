@@ -32,6 +32,8 @@ This repository contains UI automation scripts to test web functionalities using
 `./gradlew build cucumber -P tags=@home`
 3. Running about page tests
 `./gradlew build cucumber -P tags=@about`
+4. Running product page tests
+`./gradlew build cucumber -P tags=@product`
 
 ## Project Structure
 
