@@ -8,7 +8,7 @@ public class ProductStepDefinitions extends UtilityBase {
 
     private final ProductPage productPage = new ProductPage(Hooks.getDriver());
 
-    @Then("I click {string} product on home page")
+    @Then("I click {string} on home page")
     public void iClickProductOnHomePage(String product) {
         productPage.clickProductTitle(product);
     }
