@@ -7,6 +7,7 @@ Feature: Product Page Feature
     Then I enter "<username>" and "<password>"
     Then I click Login button
     Then I click "<product>" on home page
+    Then I verify "Add to cart" button displayed on product page
     Examples:
       | username        | password     | product                 |
       | standard_user   | secret_sauce | Sauce Labs Backpack     |

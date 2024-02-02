@@ -12,4 +12,9 @@ public class ProductStepDefinitions extends UtilityBase {
     public void iClickProductOnHomePage(String product) {
         productPage.clickProductTitle(product);
     }
+
+    @Then("I verify {string} button displayed on product page")
+    public void iVerifyButtonDisplayedOnProductPage(String button) {
+        productPage.isButtonDisplayed(button);
+    }
 }
