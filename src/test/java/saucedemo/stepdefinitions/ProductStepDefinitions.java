@@ -4,6 +4,8 @@ import io.cucumber.java.en.Then;
 import saucedemo.pages.ProductPage;
 import saucedemo.utilities.UtilityBase;
 
+import static junit.framework.TestCase.assertTrue;
+
 public class ProductStepDefinitions extends UtilityBase {
 
     private final ProductPage productPage = new ProductPage(Hooks.getDriver());
@@ -15,6 +17,6 @@ public class ProductStepDefinitions extends UtilityBase {
 
     @Then("I verify {string} button displayed on product page")
     public void iVerifyButtonDisplayedOnProductPage(String button) {
-        productPage.isButtonDisplayed(button);
+        assertTrue("Verify '" + button + "' button is displayed on product page", productPage.isButtonDisplayed(button));
     }
 }
