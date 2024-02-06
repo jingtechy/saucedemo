@@ -6,6 +6,8 @@ import io.cucumber.java.en.Then;
 import saucedemo.pages.LoginPage;
 import saucedemo.utilities.UtilityBase;
 
+import static junit.framework.TestCase.assertTrue;
+
 public class LoginStepDefinitions extends UtilityBase {
     private final LoginPage loginPage = new LoginPage(Hooks.getDriver());
 
@@ -17,7 +19,7 @@ public class LoginStepDefinitions extends UtilityBase {
 
     @And("I verify {string} display on login page")
     public void iVerifyDisplayOnLoginPage(String text) {
-        loginPage.isTextDisplayed(text);
+        assertTrue("Verify '" + text + "' is displayed on login page", loginPage.isTextDisplayed(text));
     }
 
     @Then("I enter {string} and {string}")
