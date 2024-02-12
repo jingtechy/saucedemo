@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class ProductPage {
     private final WebDriver driver;
-    private WebElement productButton;
+
     public ProductPage(WebDriver driver)  { this.driver = driver; }
 
     public void clickProductTitle(String product) {
@@ -14,8 +14,7 @@ public class ProductPage {
     }
 
     public boolean isButtonDisplayed(String button) {
-        productButton = driver.findElement(By.xpath("//button[text()='" + button + "']"));
-        return productButton.isDisplayed();
+        return driver.findElement(By.xpath("//button[text()='" + button + "']")).isDisplayed();
     }
 
 }
