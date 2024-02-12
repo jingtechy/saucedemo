@@ -32,7 +32,16 @@ Feature: Home Page Feature
       | standard_user   | secret_sauce |
 
 
-
+  @addproduct @removeproduct
+  Scenario Outline: Add and remove product on home page
+    Given I go to website "https://www.saucedemo.com/"
+    And I enter "<username>" and "<password>"
+    Then I click Login button
+    Then I click "Add to cart" button on home page
+    Then I click "Remove" button on home page
+    Examples:
+      | username        | password     |
+      | standard_user   | secret_sauce |
 
 
 
